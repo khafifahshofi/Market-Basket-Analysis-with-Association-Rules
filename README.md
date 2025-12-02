@@ -61,15 +61,15 @@ Setiap musim diproses menggunakan:
 
 5. Hasil Utama : Hasil analisis menunjukkan bahwa setiap musim memiliki karakteristik pembelian yang berbeda. Item yang termasuk dalam satu seri, warna, atau tema tertentu cenderung terbeli bersama.
 
-  Ringkasan temuan:
+    Ringkasan temuan:
 
-  Winter: Pola belanja lebih stabil dan cenderung menunjukkan pembelian set produk dekoratif.
+    Winter: Pola belanja lebih stabil dan cenderung menunjukkan pembelian set produk dekoratif.
 
-  Spring: Produk bertema cerah dan dekoratif lebih sering muncul bersama.
+    Spring: Produk bertema cerah dan dekoratif lebih sering muncul bersama.
 
-  Summer: Pembelian cenderung terfragmentasi, rule lebih sedikit.
+    Summer: Pembelian cenderung terfragmentasi, rule lebih sedikit.
 
-  Autumn: Pola mirip winter, dengan kombinasi produk rumah tangga dan dekoratif.
+    Autumn: Pola mirip winter, dengan kombinasi produk rumah tangga dan dekoratif.
 
 
 
