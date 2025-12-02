@@ -2,110 +2,75 @@ Association Rules Berdasarkan Musim dengan Market Basket Analysis
 
 Proyek ini menganalisis pola pembelian konsumen berdasarkan musim menggunakan algoritma Apriori. Dataset transaksi dipecah menjadi empat periode: Winter, Spring, Summer, dan Autumn untuk melihat apakah terdapat perbedaan pola pembelian pada setiap musim. Analisis ini digunakan untuk mengidentifikasi produk yang sering dibeli bersama dalam masing-masing musim.
 
-1. Deskripsi Proyek
+1. Deskripsi Proyek : Market Basket Analysis digunakan untuk menemukan kombinasi produk yang sering muncul dalam satu transaksi. Pada proyek ini, analisis tidak dilakukan secara keseluruhan, melainkan dibagi berdasarkan musim agar pola pembelian lebih tersegmentasi dan relevan.
 
-Market Basket Analysis digunakan untuk menemukan kombinasi produk yang sering muncul dalam satu transaksi. Pada proyek ini, analisis tidak dilakukan secara keseluruhan, melainkan dibagi berdasarkan musim agar pola pembelian lebih tersegmentasi dan relevan.
+  - Empat set basket transaksi dibuat:
 
-Empat set basket transaksi dibuat:
+  - Winter
 
-Winter
+  - Spring
+  
+  - Summer
 
-Spring
-
-Summer
-
-Autumn
+  - Autumn
 
 Setiap musim diproses menggunakan:
 
-Pembersihan data
+  - Pembersihan data
 
-Segmentasi transaksi berdasarkan musim
+  - Segmentasi transaksi berdasarkan musim
 
-Pembentukan basket (one-hot encoding)
+  - Pembentukan basket (one-hot encoding)
 
-Frequent itemsets (Apriori)
+  - Frequent itemsets (Apriori)
 
-Association rules
+  - Association rules
 
-Identifikasi rules dengan lift tertinggi
+  - Identifikasi rules dengan lift tertinggi
 
-Perbandingan pola antar musim
+  - Perbandingan pola antar musim
 
-2. Dataset
+2. Dataset : Dataset yang digunakan adalah Online Retail Dataset dari Kaggle, memuat transaksi e-commerce Inggris tahun 2010–2011. Variabel yang digunakan dalam proses segmentasi musim:
 
-Dataset yang digunakan adalah Online Retail Dataset dari Kaggle, memuat transaksi e-commerce Inggris tahun 2010–2011.
-Variabel yang digunakan dalam proses segmentasi musim:
+  a. InvoiceDate → digunakan untuk menentukan musim berdasarkan bulan transaksi.
 
-InvoiceDate → digunakan untuk menentukan musim berdasarkan bulan transaksi.
+  b. Pembagian musim: 
+    - Winter: Desember, Januari, Februari
 
-Pembagian musim:
+    - Spring: Maret, April, Mei
 
-Winter: Desember, Januari, Februari
+    - Summer: Juni, Juli, Agustus
 
-Spring: Maret, April, Mei
+    - Autumn: September, Oktober, November
 
-Summer: Juni, Juli, Agustus
+3. Alur Analisis: Membersihkan data dengan menghapus transaksi duplikat, quantity negatif, dan deskripsi kosong Menambahkan kolom Season berdasarkan bulan transaksi
 
-Autumn: September, Oktober, November
+  a. Memisahkan dataset menjadi empat subset musim
 
-3. Alur Analisis
+  b. Mengelompokkan item berdasarkan invoice dan mengubahnya ke one-hot encoding
 
-Membersihkan data dengan menghapus transaksi duplikat, quantity negatif, dan deskripsi kosong
+  c. Menggunakan Apriori untuk mendapatkan frequent itemsets di setiap musim
 
-Menambahkan kolom Season berdasarkan bulan transaksi
+  d. Membuat association rules (support, confidence, lift)
 
-Memisahkan dataset menjadi empat subset musim
+  e. Menyeleksi rules terbaik berdasarkan lift tertinggi untuk masing-masing musim
 
-Mengelompokkan item berdasarkan invoice dan mengubahnya ke one-hot encoding
+  f. Menyimpulkan perbedaan pola pembelian antar musim
 
-Menggunakan Apriori untuk mendapatkan frequent itemsets di setiap musim
+4. Teknologi yang Digunakan : Python, Pandas, mlxtend (TransactionEncoder, Apriori, Association Rules), Google Colab
 
-Membuat association rules (support, confidence, lift)
+5. Hasil Utama : Hasil analisis menunjukkan bahwa setiap musim memiliki karakteristik pembelian yang berbeda. Item yang termasuk dalam satu seri, warna, atau tema tertentu cenderung terbeli bersama.
 
-Menyeleksi rules terbaik berdasarkan lift tertinggi untuk masing-masing musim
+  Ringkasan temuan:
 
-Menyimpulkan perbedaan pola pembelian antar musim
+  Winter: Pola belanja lebih stabil dan cenderung menunjukkan pembelian set produk dekoratif.
 
-4. Teknologi yang Digunakan
+  Spring: Produk bertema cerah dan dekoratif lebih sering muncul bersama.
 
-Python
+  Summer: Pembelian cenderung terfragmentasi, rule lebih sedikit.
 
-Pandas
+  Autumn: Pola mirip winter, dengan kombinasi produk rumah tangga dan dekoratif.
 
-mlxtend (TransactionEncoder, Apriori, Association Rules)
 
-Google Colab
 
-5. Hasil Utama
 
-Hasil analisis menunjukkan bahwa setiap musim memiliki karakteristik pembelian yang berbeda. Item yang termasuk dalam satu seri, warna, atau tema tertentu cenderung terbeli bersama.
-
-Ringkasan temuan:
-
-Winter: Pola belanja lebih stabil dan cenderung menunjukkan pembelian set produk dekoratif.
-
-Spring: Produk bertema cerah dan dekoratif lebih sering muncul bersama.
-
-Summer: Pembelian cenderung terfragmentasi, rule lebih sedikit.
-
-Autumn: Pola mirip winter, dengan kombinasi produk rumah tangga dan dekoratif.
-
-Detail rule dan nilai lift terdapat pada notebook.
-
-6. Struktur Proyek
-├── data/
-│   └── online_retail.csv
-├── notebook/
-│   └── market_basket_seasonal.ipynb
-├── README.md
-
-7. Cara Menjalankan
-
-Buka notebook di Google Colab
-
-Unggah dataset
-
-Jalankan kode sesuai urutan sel pada notebook
-
-Hasil association rules untuk masing-masing musim akan tampil dalam bentuk tabel
