@@ -45,17 +45,17 @@ Setiap musim diproses menggunakan:
 
 3. Alur Analisis: Membersihkan data dengan menghapus transaksi duplikat, quantity negatif, dan deskripsi kosong Menambahkan kolom Season berdasarkan bulan transaksi
 
-  a. Memisahkan dataset menjadi empat subset musim
+    a. Memisahkan dataset menjadi empat subset musim
 
-  b. Mengelompokkan item berdasarkan invoice dan mengubahnya ke one-hot encoding
+    b. Mengelompokkan item berdasarkan invoice dan mengubahnya ke one-hot encoding
 
-  c. Menggunakan Apriori untuk mendapatkan frequent itemsets di setiap musim
+    c. Menggunakan Apriori untuk mendapatkan frequent itemsets di setiap musim
 
-  d. Membuat association rules (support, confidence, lift)
+    d. Membuat association rules (support, confidence, lift)
 
-  e. Menyeleksi rules terbaik berdasarkan lift tertinggi untuk masing-masing musim
+    e. Menyeleksi rules terbaik berdasarkan lift tertinggi untuk masing-masing musim
 
-  f. Menyimpulkan perbedaan pola pembelian antar musim
+    f. Menyimpulkan perbedaan pola pembelian antar musim
 
 4. Teknologi yang Digunakan : Python, Pandas, mlxtend (TransactionEncoder, Apriori, Association Rules), Google Colab
 
